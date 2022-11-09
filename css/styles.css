@@ -1,0 +1,148 @@
+@import url(/css/imports/variables.css);
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Nav Bar */
+
+.logo-icon {
+    height: 60px;
+    width: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--drop-shadow);
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    font-family: var(--heading-font-family);
+    font-size: var(--h3-size);
+    color: black;
+    padding: 1rem;
+    display: block;
+}
+
+.toggle-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--darkest-green);
+    border-radius: 10px;
+}
+
+.navbar-links .active {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+    .toggle-menu {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        background: var(--darker-green);
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+        color: white;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-links li:hover {
+        background-color: var(--light-green);
+    }
+
+    .navbar-links li a:hover {
+        color: black;
+    }
+
+}
+
+
+/* Loading */
+
+.error {
+    border: 1px solid darkred;
+    padding: 1rem;
+    color: darkred;
+    background: rgba(255, 0, 0, 0.1);
+}
+
+message {
+    font-family: var(--heading-font-family);
+    color: green;
+    text-align: center;
+}
+
+.loader {
+    border: 16px solid white;
+    border-top: 16px solid darkgrey;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

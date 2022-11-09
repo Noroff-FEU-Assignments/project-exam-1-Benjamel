@@ -1,0 +1,16 @@
+:root {
+    --light-green: #E5F2C9;
+    --footer-green: #C7D989;
+    --darker-green: #4D8C4A;
+    --darkest-green: #124026;
+    --heading-font-family: "Raleway";
+    --paragraph-font-family: "Bitter";
+    --paragraph-font-size: 16px;
+    --h1-size-desktop: 50px;
+    --h1-size: 40px;
+    --h2-size: 34px;
+    --h3-size: 26px;
+    --h4-size: 20px;
+    --drop-shadow: 0 1px 5px #a5a4a4;
+    --inner-shadow: 0 1px 0 #a5a4a4;
+}
