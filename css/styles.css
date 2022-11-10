@@ -17,6 +17,12 @@ h1 {
     font-weight: normal;
 }
 
+h2 {
+    font-family: var(--heading-font-family);
+    font-size: var(--h2-size);
+    font-weight: normal;
+}
+
 h3 {
     font-family: var(--heading-font-family);
     font-size: var(--h3-size-size);
@@ -177,6 +183,24 @@ body {
     display: flex;
     justify-content: center;
 }
+
+/* Latest Posts/Slider  */
+.slider-title {
+    text-align: center;
+}
+
+.slider-button {
+    font-size: 60px;
+    color: var(--darkest-green);
+}
+
+.carousel-container {}
+
+.carousel {
+    display: flex;
+}
+
+
 
 /* About Page */
 .about-content {

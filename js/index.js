@@ -1,19 +1,22 @@
 import { message } from "./message.js";
 
-const sliderContainer = document.querySelector(".slider")
+const sliderUrl = "http://exam-blog-site.local/wp-json/wp/v2/posts?per_page=100&_embed";
+const sliderTitle = document.querySelector(".slider-title");
+const sliderContainer = document.querySelector(".slider");
+
 const featuredImgUrl = "http://exam-blog-site.local/wp-json/wp/v2/posts/122?_embed";
 const featuredImg = document.querySelector(".featured-img");
-
-// const url = "http://exam-blog-site.local/wp-json/wp/v2/posts";
-
 
 // Fetch Api
 async function fetchData() {
     try {
-        const response = await fetch(featuredImgUrl);
-        const result = await response.json();
+        const featuredResponse = await fetch(featuredImgUrl);
+        const featuredResult = await featuredResponse.json();
 
-        createHTML(result);
+        const sliderResponse = await fetch(sliderUrl);
+        const sliderResult = await sliderResponse.json();
+
+        createHTML(featuredResult, sliderResult);
     }
 
     catch (error) {
@@ -34,4 +37,12 @@ function createHTML(headerContent) {
                 <a href="bloglist.html" class="btn">Blog Posts</a>
             </div>
         </div>`;
-} 
+
+    sliderTitle.innerHTML =
+        `<div class="slider-title">
+            <h2>Latest Posts</h2>
+        </div>`;
+
+
+};
+
