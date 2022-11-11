@@ -90,7 +90,7 @@ body {
     height: 3px;
     background: var(--darkest-green);
     border-radius: 10px;
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .menu-btn_burger::before,
@@ -101,7 +101,7 @@ body {
     height: 3px;
     background: var(--darkest-green);
     border-radius: 10px;
-    transition: all .5s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .menu-btn_burger::before {
@@ -247,6 +247,25 @@ h3,
 
 .social-media {
     margin: 5px;
+}
+
+/* Blog List Page */
+.post-container {
+    margin: 0 auto;
+}
+
+.card-header {
+    display: flex;
+}
+
+.card-header img {
+    max-width: 100%;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.posts-header {
+    text-align: center;
 }
 
 @media (max-width: 800px) {
