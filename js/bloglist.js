@@ -15,8 +15,8 @@ async function getPosts() {
     }
 
     catch (error) {
-        console.log(error, "An error ocurred")
-        blogList.innerHTML = message("error", error)
+        console.log(error, "An error ocurred");
+        blogList.innerHTML = message("error", error);
     }
 }
 
