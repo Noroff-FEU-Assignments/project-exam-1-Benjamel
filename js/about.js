@@ -1,7 +1,7 @@
 
 
 const aboutContainer = document.querySelector(".about-content")
-const aboutUrl = "http://exam-blog-site.local/wp-json/wp/v2/posts/133?_embed";
+const aboutUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts/133?_embed";
 
 
 // Fetch Api

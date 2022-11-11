@@ -1,10 +1,12 @@
 import { message } from "./message.js";
 
-const sliderUrl = "http://exam-blog-site.local/wp-json/wp/v2/posts?per_page=100&_embed";
+// Carousel Content
+const sliderUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts?per_page=20&_embed";
 const sliderTitle = document.querySelector(".slider-title");
-const sliderContainer = document.querySelector(".slider");
+const sliderContainer = document.querySelector(".carousel-container");
 
-const featuredImgUrl = "http://exam-blog-site.local/wp-json/wp/v2/posts/122?_embed";
+// Featured section
+const featuredImgUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts/122?_embed";
 const featuredImg = document.querySelector(".featured-img");
 
 // Fetch Api
@@ -16,7 +18,10 @@ async function fetchData() {
         const sliderResponse = await fetch(sliderUrl);
         const sliderResult = await sliderResponse.json();
 
-        createHTML(featuredResult, sliderResult);
+        createHTML(featuredResult);
+        sliderContent(sliderResult);
+
+        console.log(sliderResult);
     }
 
     catch (error) {
@@ -29,20 +34,28 @@ fetchData();
 
 function createHTML(headerContent) {
     featuredImg.innerHTML +=
-        `<div class="featured-content">
-            <img src="${headerContent._embedded["wp:featuredmedia"]["0"].source_url}" alt="featured image">
-            <div class="featured-text">
-                <h1>${headerContent.title.rendered}</h1>
-                <p>${headerContent.excerpt.rendered}</p>
-                <a href="bloglist.html" class="btn">Blog Posts</a>
-            </div>
-        </div>`;
+                            `<div class="featured-content">
+                                <img src="${headerContent._embedded["wp:featuredmedia"]["0"].source_url}" alt="featured image">
+                                <div class="featured-text">
+                                    <h1>${headerContent.title.rendered}</h1>
+                                    <p>${headerContent.excerpt.rendered}</p>
+                                    <a href="bloglist.html" class="btn">Blog Posts</a>
+                                </div>
+                            </div>`;
 
     sliderTitle.innerHTML =
         `<div class="slider-title">
             <h2>Latest Posts</h2>
         </div>`;
-
-
 };
 
+function sliderContent(sliderResult) {
+
+    sliderContainer.innerHTML = "";
+
+    for(let i = 3; i < sliderResult.length; i++) {
+        sliderContainer.innerHTML += `<div>
+                                        <h2>${sliderResult[i].title.rendered}</h2>
+                                    </div>`;
+    }
+};

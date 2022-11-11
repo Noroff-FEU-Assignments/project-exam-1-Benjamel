@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="/js/script.js" defer></script>
     <script src="/js/menu.js" defer></script>
+    <script src="/js/contact.js" defer></script>
     <title>Contact | My blog</title>
 </head>
 
@@ -34,5 +35,43 @@
         </nav>
     </header>
 </body>
-
+<main>
+    <div class="contact-page">
+        <div class="contact">
+            <h1 class="h1-contact">Contact Us</h1>
+            <div id="message"></div>
+            <form>
+                <div>
+                    <label>
+                        Name *
+                        <input name="fullName" id="fullName" />
+                    </label>
+                    <div class="form-error" id="fullNameError">Please enter your name</div>
+                </div>
+                <div>
+                    <label>
+                        Subject *
+                        <input name="subject" id="subject" />
+                    </label>
+                    <div class="form-error" id="subjectError">Subject must be at least 1 characters</div>
+                </div>
+                <div>
+                    <label>
+                        Email address *
+                        <input name="email" id="email" />
+                    </label>
+                    <div class="form-error" id="emailError">Please enter a valid email address</div>
+                </div>
+                <div class="address-label">
+                    <label>
+                        Address *
+                        <input name="address" id="address" />
+                    </label>
+                    <div class="form-error" id="addressError">Address must be at least 1 characters</div>
+                </div>
+                <button type="submit" id="sendButton" disabled>Send</button>
+            </form>
+        </div>
+    </div>
+</main>
 </html>
