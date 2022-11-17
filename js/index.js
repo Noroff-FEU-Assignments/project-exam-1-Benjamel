@@ -9,6 +9,9 @@ const sliderContainer = document.querySelector(".carousel-container");
 const featuredImgUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts/122?_embed";
 const featuredImg = document.querySelector(".featured-img");
 
+// Footer
+const footerContainer = document.querySelector(".footer-container")
+
 // Fetch Api
 async function fetchData() {
     try {
@@ -34,8 +37,8 @@ fetchData();
 
 function createHTML(headerContent) {
     featuredImg.innerHTML +=
-                            `<div class="featured-content">
-                                <img src="${headerContent._embedded["wp:featuredmedia"]["0"].source_url}" alt="featured image">
+        `<div class="featured-content">
+                                <img src="${headerContent._embedded["wp:featuredmedia"]["0"].source_url}" alt="">
                                 <div class="featured-text">
                                     <h1>${headerContent.title.rendered}</h1>
                                     <p>${headerContent.excerpt.rendered}</p>
@@ -45,17 +48,21 @@ function createHTML(headerContent) {
 
     sliderTitle.innerHTML =
         `<div class="slider-title">
-            <h2>Latest Posts</h2>
-        </div>`;
+                                <h2>Latest Posts</h2>
+                            </div>`;
 };
+
 
 function sliderContent(sliderResult) {
 
     sliderContainer.innerHTML = "";
 
-    for(let i = 3; i < sliderResult.length; i++) {
+    for (let i = 3; i < sliderResult.length; i++) {
         sliderContainer.innerHTML += `<div>
                                         <h2>${sliderResult[i].title.rendered}</h2>
                                     </div>`;
     }
+
+
+
 };
