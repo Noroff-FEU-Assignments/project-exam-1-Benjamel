@@ -1,7 +1,7 @@
 
 const modalContainerHeader = document.querySelector(".modal-container-header");
 const modalContainerGallery = document.querySelector(".modal-container-gallery");
-const modalContainerGalleryTwo = document.querySelector(".modal-container-gallery-two");
+// const modalContainerGalleryTwo = document.querySelector(".modal-container-gallery-two");
 
 const postDetails = document.querySelector(".post-details");
 
@@ -69,9 +69,9 @@ function createHTML(blogPosts) {
                                         </div>`;
 
 
-    modalContainerGalleryTwo.innerHTML = `<div class="modal-img">
-                                             ${blogPosts.content.rendered}
-                                          </div>`;
+    // modalContainerGalleryTwo.innerHTML = `<div class="modal-img">
+    //                                          ${blogPosts.content.rendered}
+    //                                       </div>`;
 
 
 
@@ -98,6 +98,7 @@ function createHTML(blogPosts) {
 
     imgGallery.onclick = function () {
         modalGallery.style.display = "block";
+        console.log(imgGallery);
 
 
         window.addEventListener("click", function (event) {
@@ -108,17 +109,17 @@ function createHTML(blogPosts) {
     };
 
 
-    const modalGalleryTwo = document.getElementById("modal-container-gallery-two");
-    const imgGalleryTwo = document.getElementsByClassName("wp-gallery")["0"];
+    // const modalGalleryTwo = document.getElementById("modal-container-gallery-two");
+    // const imgGalleryTwo = document.getElementsByClassName("wp-gallery")["0"];
 
-    imgGalleryTwo.onclick = function () {
-        modalGalleryTwo.style.display = "block";
+    // imgGalleryTwo.onclick = function () {
+    //     modalGalleryTwo.style.display = "block";
 
 
-        window.addEventListener("click", function (event) {
-            if (event.target == modalGalleryTwo) {
-                modalGalleryTwo.style.display = "none";
-            };
-        });
-    };
+    //     window.addEventListener("click", function (event) {
+    //         if (event.target == modalGalleryTwo) {
+    //             modalGalleryTwo.style.display = "none";
+    //         };
+    //     });
+    // };
 };

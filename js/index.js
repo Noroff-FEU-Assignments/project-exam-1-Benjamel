@@ -62,7 +62,4 @@ function sliderContent(sliderResult) {
                                         <h2>${sliderResult[i].title.rendered}</h2>
                                     </div>`;
     }
-
-
-
 };
