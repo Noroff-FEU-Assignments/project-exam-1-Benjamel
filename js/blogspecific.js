@@ -1,4 +1,7 @@
 
+const modalContainerHeader = document.querySelector(".modal-container-header");
+const modalContainerGallery = document.querySelector(".modal-container-gallery");
+const modalContainerGalleryTwo = document.querySelector(".modal-container-gallery-two");
 
 const postDetails = document.querySelector(".post-details");
 
@@ -37,7 +40,7 @@ function createHTML(blogPosts) {
 
     postDetails.innerHTML += `  <div class="post-container">
                                     <div class="post-header">
-                                    <img class="modal-image" src="${blogPosts._embedded["wp:featuredmedia"]["0"].source_url}" alt="${blogPosts.title.rendered}"></img>
+                                    <img class="modal-image" id="modal-img" src="${blogPosts._embedded["wp:featuredmedia"]["0"].source_url}" alt="${blogPosts.title.rendered}"></img>
                                     </div>
                                     <div class="post-card">
                                         <div class="post-date">
@@ -46,19 +49,41 @@ function createHTML(blogPosts) {
                                         </div>
                                         <hr>
                                         <div class="post-content">
-                                        <h1>${blogPosts.title.rendered}</h1>
-                                        <div class="wp-gallery">${blogPosts.content.rendered}</div>
+                                            <h1>${blogPosts.title.rendered}</h1>
+                                            <p>${blogPosts.excerpt.rendered}</p>
+                                            <div class="wp-gallery">${blogPosts.content.rendered}</div>
                                         </div>
                                     </div>
                                 </div>`;
 
-    const modalContainer = document.querySelector(".modal-container");
-    const modalImage = document.getElementsByClassName("modal-image")[0];
+
+
+
+    modalContainerHeader.innerHTML = `<div class="modal-img">
+                                             <img src="${blogPosts._embedded["wp:featuredmedia"]["0"].source_url}" alt="${blogPosts.title.rendered}"></img>
+                                        </div>`;
+
+
+    modalContainerGallery.innerHTML = `<div class="modal-img">
+                                            ${blogPosts.content.rendered}
+                                        </div>`;
+
+
+    modalContainerGalleryTwo.innerHTML = `<div class="modal-img">
+                                             ${blogPosts.content.rendered}
+                                          </div>`;
+
+
+
+
+
+    const modalContainer = document.getElementById("modal-container-header");
+    const modalImage = document.getElementsByClassName("modal-image")["0"];
 
 
     modalImage.onclick = function () {
         modalContainer.style.display = "block";
-
+        console.log(modalImage);
 
         window.addEventListener("click", function (event) {
             if (event.target == modalContainer) {
@@ -67,39 +92,33 @@ function createHTML(blogPosts) {
         });
     };
 
-    const modalGallery = document.querySelector(".modal-gallery")
-    const imgGallery = document.querySelector(".wp-gallery")
+
+    const modalGallery = document.getElementById("modal-container-gallery");
+    const imgGallery = document.getElementsByClassName("wp-gallery")["0"];
 
     imgGallery.onclick = function () {
-        modalContainer.style.display = "block";
+        modalGallery.style.display = "block";
 
 
         window.addEventListener("click", function (event) {
-            if (event.target == modalContainer) {
-                modalContainer.style.display = "none";
+            if (event.target == modalGallery) {
+                modalGallery.style.display = "none";
+            };
+        });
+    };
+
+
+    const modalGalleryTwo = document.getElementById("modal-container-gallery-two");
+    const imgGalleryTwo = document.getElementsByClassName("wp-gallery")["0"];
+
+    imgGalleryTwo.onclick = function () {
+        modalGalleryTwo.style.display = "block";
+
+
+        window.addEventListener("click", function (event) {
+            if (event.target == modalGalleryTwo) {
+                modalGalleryTwo.style.display = "none";
             };
         });
     };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-// mainImage.onclick = function () {
-//     modalMain.style.display = "block";
-
-//     window.addEventListener("click", function (event) {
-//         if (event.target == modalMain) {
-//             modalMain.style.display = "none";
-//         };
-//     });
-// };
-

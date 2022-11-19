@@ -415,29 +415,33 @@ h2 {
 }
 
 /* Popup Modal */
-
-.modal-container {
+.modal-container-header,
+.modal-container-gallery,
+.modal-container-gallery-two {
     position: fixed;
-    z-index: 999;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     display: none;
 }
 
-.modal-image img {
-    height: 250px;
-    width: 350px;
-    border: 10px solid #fff;
+.modal-img img {
+    max-width: 99%;
+    height: auto;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
 }
 
-.wp-gallery img {
-    height: 250px;
-    width: 350px;
-    border: 10px solid #fff;
+.modal-img p {
+    display: none;
 }
 
 /* Contact page */
