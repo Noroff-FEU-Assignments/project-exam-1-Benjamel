@@ -19,17 +19,20 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="index.html"><img src="/icons/icons8-evergreen-100.png" alt="logo of a tree" class="logo-icon"></a>
-            <a href="#" class="toggle-menu">
-                <div class="menu-btn_burger"></div>
-            </a>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="bloglist.html" class="nav-link active">Blog Posts</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
+            <div class="nav-child">
+                <a href="index.html"><img src="/icons/icons8-evergreen-100.png" alt="logo of a tree"
+                        class="logo-icon"></a>
+                <a href="#" class="toggle-menu">
+                    <div class="menu-btn_burger"></div>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="bloglist.html" class="nav-link active">Blog Posts</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -37,8 +40,9 @@
         <div class="container">
             <div class="post-details"></div>
             <div class="modal-container-header" id="modal-container-header"></div>
-            <div class="modal-container-gallery" id="modal-container-gallery"></div>
-            <div class="modal-container-gallery-two" id="modal-container-gallery-two"></div>
+            <div class="modal-container-gallery" id="modal-container-gallery">
+                <img class="modal_content" id="imgpopup">
+            </div>
             <div class="comment-section"></div>
         </div>
     </main>

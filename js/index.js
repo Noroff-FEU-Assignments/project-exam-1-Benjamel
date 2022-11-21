@@ -35,7 +35,7 @@ async function fetchData() {
 
 fetchData();
 
-function createHTML(headerContent) {
+function createHTML(headerContent, sliderResult) {
     featuredImg.innerHTML +=
         `<div class="featured-content">
                                 <img src="${headerContent._embedded["wp:featuredmedia"]["0"].source_url}" alt="">
@@ -58,8 +58,22 @@ function sliderContent(sliderResult) {
     sliderContainer.innerHTML = "";
 
     for (let i = 3; i < sliderResult.length; i++) {
-        sliderContainer.innerHTML += `<div>
-                                        <h2>${sliderResult[i].title.rendered}</h2>
-                                    </div>`;
+        sliderContainer.innerHTML += `<a href="/blogspecific.html?id=${sliderResult[i].id}" class="post-link">
+                                        <div class="post-slider">
+                                            <div class="blog-list-container card-shadow">
+                                                <div class="card-header card-image">
+                                                    <img src="${sliderResult[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt="${sliderResult[i].title.rendered}">
+                                                </div>
+                                                <div class="card-body">
+                                                    <h2>${sliderResult[i].title.rendered}</h2>
+                                                    <hr>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <p>${sliderResult[i]._embedded.author[0].name}</p>
+                                                    <p>${sliderResult[i].date}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a> `;
     }
 };
