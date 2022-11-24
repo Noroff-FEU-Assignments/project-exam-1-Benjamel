@@ -252,6 +252,8 @@ img {
     display: grid;
     grid-template-columns: repeat(6, 100%);
     grid-template-rows: 1fr;
+    scroll-snap-type: mandatory;
+    scroll-snap-align: center;
 }
 
 .slide_container-wrapper a {
