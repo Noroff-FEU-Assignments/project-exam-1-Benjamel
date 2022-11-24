@@ -210,8 +210,17 @@ img {
     overflow: hidden;
     width: 80%;
     max-width: 1200px;
-    height: 600px;
+    max-height: 600px;
     scroll-behavior: smooth;
+    box-shadow: var(--drop-shadow);
+}
+
+.carousel_image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    object-position: center;
 }
 
 .slides-container {
@@ -241,9 +250,15 @@ img {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 100%);
+    grid-template-columns: repeat(6, 100%);
     grid-template-rows: 1fr;
 }
+
+.slide_container-wrapper a {
+    text-decoration: none;
+    color: black;
+}
+
 
 .slide-arrow {
     position: absolute;
@@ -251,13 +266,14 @@ img {
     top: 0;
     bottom: 0;
     margin: auto;
-    height: 4rem;
+    height: 65px;
     background-color: white;
     border: none;
     width: 2rem;
-    font-size: 3rem;
+    font-size: 50px;
     padding: 0;
-    transition: opacity 100ms;
+    opacity: 0.8;
+    transition: 250ms;
 }
 
 .slide-arrow:hover,
@@ -268,25 +284,16 @@ img {
 #slide-arrow-prev {
     left: 0;
     padding-left: 0.25rem;
-    border-radius: 0 2rem 2rem 0;
+    /* border-radius: 0 2rem 2rem 0; */
     color: black;
 }
 
 #slide-arrow-next {
     right: 0;
     padding-left: 0.75rem;
-    border-radius: 2rem 0 0 2rem;
+    /* border-radius: 2rem 0 0 2rem; */
     color: black;
 }
-
-.carousel_image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 16 / 9;
-    object-position: center;
-}
-
 
 /* .carousel-container {
     position: relative;
@@ -737,6 +744,10 @@ label {
         max-width: 99%;
     }
 
+    .carousel_container {
+        width: 90%;
+    }
+
 }
 
 @media (max-width: 750px) {
@@ -767,6 +778,10 @@ label {
 
 @media (max-width: 600px) {
 
+    .nav-child {
+        width: 100%;
+    }
+
     .toggle-menu {
         display: flex;
     }
@@ -774,6 +789,8 @@ label {
     .navbar-links {
         display: none;
         background: var(--darker-green);
+        position: absolute;
+        margin-top: 64px;
         width: 100%;
     }
 
@@ -821,6 +838,10 @@ label {
 
     .post-content figure img {
         margin: 0;
+    }
+
+    .carousel_container {
+        width: 95%;
     }
 
 }

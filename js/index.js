@@ -57,13 +57,21 @@ function getSlider(getResults) {
 
     for (let i = 2; i < getResults.length; i++) {
 
-        if (i === 5) {
+        if (i === 8) {
             break
         }
 
         slideContainerWrapper.innerHTML += `
                         <a class="carousel_images current-slide" href="/blogspecific.html?id=${getResults[i].id}">
                             <img class="carousel_image" src="${getResults[i]._embedded["wp:featuredmedia"]["0"].source_url}" alt="${getResults[i].title.rendered}">
+                            <div class="card-body">
+                                <h2>${getResults[i].title.rendered}</h2>
+                                <hr>
+                            </div>
+                            <div class="card-footer">
+                                <p>${getResults[i]._embedded.author[0].name}</p>
+                                <p>${getResults[i].date}</p>
+                            </div>
                         </a>`;
     }
 }
