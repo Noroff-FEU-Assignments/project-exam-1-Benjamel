@@ -221,6 +221,7 @@ img {
     object-fit: cover;
     aspect-ratio: 16 / 9;
     object-position: center;
+    scroll-snap-align: center;
 }
 
 .slides-container {
@@ -231,6 +232,7 @@ img {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
 .slides-container {
@@ -250,10 +252,8 @@ img {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 100%);
+    grid-template-columns: repeat(8, 100%);
     grid-template-rows: 1fr;
-    scroll-snap-type: mandatory;
-    scroll-snap-align: center;
 }
 
 .slide_container-wrapper a {

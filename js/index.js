@@ -57,7 +57,7 @@ function getSlider(getResults) {
 
     for (let i = 2; i < getResults.length; i++) {
 
-        if (i === 8) {
+        if (i === 10) {
             break
         }
 
