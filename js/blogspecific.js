@@ -1,6 +1,7 @@
 
 const modalContainerHeader = document.querySelector(".modal-container-header");
 const modalContainerGallery = document.querySelector(".modal-container-gallery");
+const backBtn = document.querySelector(".back-btn");
 
 const postDetails = document.querySelector(".post-details");
 
@@ -53,6 +54,9 @@ fetchPosts();
 
 function createHTML(blogPosts) {
     document.title = blogPosts.title.rendered;
+
+    backBtn.innerHTML = 
+    `<a href="/bloglist.html">&#8592; Back</a>`;
 
     postDetails.innerHTML += `  <div class="post-container">
                                     <div class="post-header">
