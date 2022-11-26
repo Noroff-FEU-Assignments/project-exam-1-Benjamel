@@ -50,10 +50,7 @@ img {
     align-items: center;
     box-shadow: var(--drop-shadow);
     width: 100%;
-
 }
-
-
 
 .nav-child {
     margin: 0 auto;
@@ -769,6 +766,7 @@ label {
 
     .nav-child {
         width: 100%;
+        padding: 0;
     }
 
     .toggle-menu {
