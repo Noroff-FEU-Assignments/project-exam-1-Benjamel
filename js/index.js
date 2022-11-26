@@ -94,3 +94,4 @@ const right = () => {
 
 leftButton.addEventListener("click", left);
 rightButton.addEventListener("click", right);
+

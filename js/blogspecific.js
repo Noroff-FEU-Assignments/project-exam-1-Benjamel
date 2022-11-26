@@ -55,8 +55,8 @@ fetchPosts();
 function createHTML(blogPosts) {
     document.title = blogPosts.title.rendered;
 
-    backBtn.innerHTML = 
-    `<a href="/bloglist.html">&#8592; Back</a>`;
+    backBtn.innerHTML =
+        `<a href="/bloglist.html">&#8592; Back</a>`;
 
     postDetails.innerHTML += `  <div class="post-container">
                                     <div class="post-header">
@@ -81,9 +81,9 @@ function createHTML(blogPosts) {
                                              <img src="${blogPosts._embedded["wp:featuredmedia"]["0"].source_url}" alt="${blogPosts.title.rendered}"></img>
                                         </div>`;
 
+    //Modal popup
     const modalContainer = document.getElementById("modal-container-header");
     const modalImage = document.getElementsByClassName("modal-image")["0"];
-
 
     modalImage.onclick = function () {
         modalContainer.style.display = "block";

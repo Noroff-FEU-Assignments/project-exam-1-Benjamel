@@ -64,3 +64,14 @@ viewMoreBtn.onclick = function () {
     getPosts(newUrl);
     viewMorePosts.classList.add("remove");
 }
+
+//Search Engine
+
+// const searchInput = document.querySelector("[data-search]");
+
+// searchInput.addEventListener("input", e => {
+//     const value = e.target.value;
+//     console.log(value);
+// })
+
+// let posts = [];
