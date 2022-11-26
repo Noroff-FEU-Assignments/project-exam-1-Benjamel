@@ -17,21 +17,21 @@ toggleMenu.addEventListener("click", function () {
         menuOpen = false;
         navModalContainer.style.display = "none";
     }
-
-    let prevScrollPos = window.pageYOffset;
-    window.onscroll = function () {
-        const currentScrollPos = window.pageYOffset;
-        if (prevScrollPos > currentScrollPos) {
-            navbarLinks.style.top = "0";
-        } else {
-            navbarLinks.style.top = "-260px";
-            navModalContainer.style.display = "none";
-
-        }
-        prevScrollPos = currentScrollPos;
-    }
-
 });
+
+let prevScrollPos = window.pageYOffset;
+window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollPos > currentScrollPos) {
+        navbarLinks.style.top = "0";
+        navbarLinks.classList.remove("active");
+        toggleMenu.classList.remove("open");
+    } else {
+        navbarLinks.style.top = "-260px";
+        navModalContainer.style.display = "none";
+    }
+    prevScrollPos = currentScrollPos;
+}
 
 // Footer
 

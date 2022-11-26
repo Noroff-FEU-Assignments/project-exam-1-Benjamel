@@ -50,7 +50,10 @@ img {
     align-items: center;
     box-shadow: var(--drop-shadow);
     width: 100%;
+
 }
+
+
 
 .nav-child {
     margin: 0 auto;
@@ -454,8 +457,6 @@ h2 {
     display: none;
 }
 
-#search {}
-
 /* View more button */
 #viewMoreBtn {
     display: flex;
@@ -781,19 +782,6 @@ label {
         position: absolute;
         margin-top: 64px;
         width: 100%;
-        animation: fromtop 0.4s;
-    }
-
-    @keyframes fromtop {
-        from {
-            top: 0px;
-            opacity: 0;
-        }
-
-        to {
-            top: 3px;
-            opacity: 1;
-        }
     }
 
     .navbar {
@@ -825,13 +813,10 @@ label {
     }
 
     .navbar-links .active {
-        /* color: black; */
         font-weight: bold;
         font-size: 28px;
         background-color: var(--darker-green);
-        /* border: 1px solid var(--darkest-green); */
     }
-
 
 
     /* featured content */
