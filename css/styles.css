@@ -152,7 +152,7 @@ img {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto 0 auto;
+    margin: 30px auto 0 auto;
     background-color: var(--light-green);
 }
 
@@ -746,6 +746,7 @@ label {
 @media (max-width: 750px) {
     .featured-content {
         flex-direction: column;
+        margin: 0 auto 0 auto;
     }
 
     .featured-content img {
