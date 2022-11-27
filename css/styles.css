@@ -152,7 +152,7 @@ img {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 30px auto 0 auto;
+    margin: 0 auto 0 auto;
     background-color: var(--light-green);
 }
 
@@ -439,7 +439,7 @@ h2 {
 }
 
 .search-wrapper input {
-    max-width: 200px;
+    max-width: 250px;
     font-size: 16px;
     font-family: var(--heading-font-family);
 }
@@ -452,6 +452,13 @@ h2 {
 
 .hide {
     display: none;
+}
+
+#search {
+    background-image: url('/icons/icons8-search.svg');
+    background-position: 0 1px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
 }
 
 /* View more button */

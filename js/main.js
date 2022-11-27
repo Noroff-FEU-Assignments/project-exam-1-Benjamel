@@ -24,8 +24,6 @@ window.onscroll = function () {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollPos > currentScrollPos) {
         navbarLinks.style.top = "0";
-        navbarLinks.classList.remove("active");
-        toggleMenu.classList.remove("open");
     } else {
         navbarLinks.style.top = "-260px";
         navModalContainer.style.display = "none";
@@ -40,9 +38,6 @@ const footerContainer = document.querySelector(".footer-container")
 footerContainer.innerHTML = `
                             <div class="footer-nav">
                                 <div class="social-media-icons">
-                                    <a href="http://www.instagram.com/benjaminmeldal">
-                                    <img src="/icons/icons8-instagram-48.png" alt="instagram icon" class="social-media">
-                                    </a>
                                     <a href="https://www.github.com/Benjamel">
                                     <img src="/icons/icons8-github-50.png" alt="github icon" class="social-media">
                                     </a>
@@ -51,6 +46,9 @@ footerContainer.innerHTML = `
                                     </a>
                                     <a href="https://www.discord.com/">
                                     <img src="/icons/icons8-discord-48.png" alt="discord icon" class="social-media">
+                                    </a>
+                                    <a href="http://www.instagram.com/benjaminmeldal">
+                                    <img src="/icons/icons8-instagram-48.png" alt="instagram icon" class="social-media">
                                     </a>
                                 </div>
                             </div>

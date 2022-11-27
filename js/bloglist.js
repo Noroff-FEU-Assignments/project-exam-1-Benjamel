@@ -13,6 +13,8 @@ async function getPosts(urls) {
 
         console.log(getResults);
         createHTML(getResults);
+        // searchFunction(getResults);
+
     }
 
     catch (error) {
@@ -67,11 +69,21 @@ viewMoreBtn.onclick = function () {
 
 //Search Engine
 
-// const searchInput = document.querySelector("[data-search]");
+function myFunction() {
+    // Declare variables
+    var input, filter, a, h2, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    a = document.getElementsByClassName("post-link");
 
-// searchInput.addEventListener("input", e => {
-//     const value = e.target.value;
-//     console.log(value);
-// })
-
-// let posts = [];
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < h2.length; i++) {
+        h2 = a[i].getElementsByTagName("h2")[0];
+        txtValue = h2.textContent || h2.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            h2[i].style.display = "";
+        } else {
+            h2[i].style.display = "none";
+        }
+    }
+}
