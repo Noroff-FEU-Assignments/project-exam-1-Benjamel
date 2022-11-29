@@ -1,4 +1,4 @@
-import { message } from "./message.js";
+import { displayMessage } from "./displayMessage.js";
 
 //Slider
 const sliderUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts?per_page=20&_embed";
@@ -19,12 +19,11 @@ async function fetchData() {
 
         createHTML(featuredResult);
         getSlider(sliderResult);
-        console.log(sliderResult);
     }
 
     catch (error) {
         console.log(error, "An error ocurred");
-        carouselContainer.innerHTML = message("error", error)
+        displayMessage("error", error, ".errorMsg")
     }
 }
 

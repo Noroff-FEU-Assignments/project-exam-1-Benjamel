@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="/js/index.js" type="module" defer></script>
     <script src="/js/main.js" type="module" defer></script>
-    <script src="js/message.js" type="module" defer></script>
     <title>Home | My blog</title>
     <!-- Hotjar Tracking Code for school blog exam -->
     <script>
@@ -49,17 +48,17 @@
         </nav>
     </header>
     <main>
+        <div class="errorMsg"></div>
         <div class="nav-modal-container"></div>
         <div class="featured-img"></div>
         <div class="slider-title"></div>
-
         <div class="carousel_container">
             <button class="slide-arrow" id="slide-arrow-prev">&#8249;</button>
             <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
 
             <div class="slides-container" id="slides-container">
                 <div class="slide_container-wrapper">
-
+                    <div class="loader"></div>
                 </div>
             </div>
         </div>

@@ -1,3 +1,4 @@
+import { displayMessage } from "./displayMessage.js";
 
 const modalContainerHeader = document.querySelector(".modal-container-header");
 const modalContainerGallery = document.querySelector(".modal-container-gallery");
@@ -47,6 +48,7 @@ async function fetchPosts() {
 
     catch (error) {
         console.log(error, "An error ocurred")
+        displayMessage("error", error, ".errorMsg")
     }
 }
 

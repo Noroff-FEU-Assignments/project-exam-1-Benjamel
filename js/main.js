@@ -5,34 +5,52 @@ const navbarLinks = document.getElementsByClassName("navbar-links")[0];
 const navModalContainer = document.querySelector(".nav-modal-container");
 const menuBurger = document.querySelector(".menu-btn_burger");
 
-let menuOpen = false;
-toggleMenu.addEventListener("click", function () {
-    navbarLinks.classList.toggle("active");
-    if (!menuOpen) {
-        toggleMenu.classList.add("open");
-        menuOpen = true;
-        navModalContainer.style.display = "block";
-    } else {
-        toggleMenu.classList.remove("open");
-        menuOpen = false;
-        navModalContainer.style.display = "none";
+async function mainJs() {
+    try {
+        navJs();
+        navModalJs();
     }
-});
+    catch (error) {
+        console.log(error, "An error ocurred");
+    }
+}
 
-let prevScrollPos = window.pageYOffset;
-window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollPos > currentScrollPos) {
-        navbarLinks.style.top = "0";
-    } else {
-        navbarLinks.style.top = "-260px";
-        navModalContainer.style.display = "none";
+mainJs();
+
+//Hamburger Menu 
+function navJs() {
+    let menuOpen = false;
+    toggleMenu.addEventListener("click", function () {
+        navbarLinks.classList.toggle("active");
+        if (!menuOpen) {
+            toggleMenu.classList.add("open");
+            menuOpen = true;
+            navModalContainer.style.display = "block";
+        } else {
+            toggleMenu.classList.remove("open");
+            menuOpen = false;
+            navModalContainer.style.display = "none";
+        }
+    });
+}
+
+//attempt to make a background modal when my burger menu opened, and close it on scroll
+//dont quite work the way i want it to..
+function navModalJs() {
+    let prevScrollPos = window.pageYOffset;
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollPos > currentScrollPos) {
+            navbarLinks.style.top = "0";
+        } else {
+            navbarLinks.style.top = "-260px";
+            navModalContainer.style.display = "none";
+        }
+        prevScrollPos = currentScrollPos;
     }
-    prevScrollPos = currentScrollPos;
 }
 
 // Footer
-
 const footerContainer = document.querySelector(".footer-container")
 
 footerContainer.innerHTML = `
@@ -55,23 +73,3 @@ footerContainer.innerHTML = `
                                 <div class="footer-copyright">
                                     <p>©Copyright Benjamin Meldal</p>
                                 </div>`;
-
-
-// function NavModal() {
-
-
-//     const navModalContainer = document.querySelector("nav-modal-container")[0];
-//     const modalNav = document.getElementsByClassName("toggle-menu")[0];
-
-//     modalNav.onclick = function () {
-//         navModalContainer.style.display = "block";
-
-//         window.addEventListener("click", function (event) {
-//             if (event.target == navModalContainer) {
-//                 navModalContainer.style.display = "none";
-//             };
-//         });
-//     };
-// }
-
-// NavModal();

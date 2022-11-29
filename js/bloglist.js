@@ -1,8 +1,8 @@
-// import { message } from "./message.js";
+import { displayMessage } from "./displayMessage.js";
 
 const blogList = document.querySelector(".posts-container");
 const postHeader = document.querySelector(".posts-header");
-const viewMorePosts = document.querySelector(".view-more-container")
+const viewMorePosts = document.querySelector(".view-more-container");
 
 const postsUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts?per_page=12&_embed";
 
@@ -11,15 +11,14 @@ async function getPosts(urls) {
         const response = await fetch(urls);
         const getResults = await response.json();
 
-        console.log(getResults);
+        // console.log(getResults);
         createHTML(getResults);
-        // searchFunction(getResults);
-
+        // SearchPosts(getResults);
     }
 
     catch (error) {
         console.log(error, "An error ocurred");
-        blogList.innerHTML = message("error", error);
+        displayMessage("error", error, ".errorMsg")
     }
 }
 
@@ -68,22 +67,18 @@ viewMoreBtn.onclick = function () {
 }
 
 //Search Engine
+const search = document.querySelector(".search");
 
-function myFunction() {
-    // Declare variables
-    var input, filter, a, h2, i, txtValue;
-    input = document.getElementById("search");
-    filter = input.value.toUpperCase();
-    a = document.getElementsByClassName("post-link");
+search.onkeyup = function (event) {
+    const searchValue = event.target.value.trim().toLowerCase();
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < h2.length; i++) {
-        h2 = a[i].getElementsByTagName("h2")[0];
-        txtValue = h2.textContent || h2.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            h2[i].style.display = "";
-        } else {
-            h2[i].style.display = "none";
+    const filteredPosts = getResults.filter(function (getResults) {
+        if (getResults.full_name.toLowerCase().startsWith(searchValue)) {
+            return true;
         }
-    }
+    })
+
+    createHTML(filteredPosts);
+
+    console.log(filteredPosts);
 }

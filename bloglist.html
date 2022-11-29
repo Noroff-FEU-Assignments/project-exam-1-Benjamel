@@ -48,13 +48,16 @@
         </nav>
     </header>
     <main>
+        <div class="errorMsg"></div>
         <div class="nav-modal-container"></div>
         <div class="posts-header">
         </div>
         <div class="search-wrapper">
-            <input type="text" id="search" onkeyup="searchFunction()" placeholder="Search for posts..">
+            <input type="search" id="search" class="search" placeholder="Search for posts..">
         </div>
-        <div class="posts-container"></div>
+        <div class="posts-container">
+            <div class="loader"></div>
+        </div>
         <div class="view-more-container"></div>
     </main>
     <footer>
