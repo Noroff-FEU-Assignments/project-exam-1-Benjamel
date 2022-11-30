@@ -293,15 +293,13 @@ img {
 #slide-arrow-prev {
     left: 0;
     padding-left: 0.25rem;
-    /* border-radius: 0 2rem 2rem 0; */
-    color: black;
+    color: var(--darker-green);
 }
 
 #slide-arrow-next {
     right: 0;
     padding-left: 0.75rem;
-    /* border-radius: 2rem 0 0 2rem; */
-    color: black;
+    color: var(--darker-green);
 }
 
 .is-hidden {
@@ -733,7 +731,7 @@ label {
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    margin: 0 auto;
+    margin: 20px auto;
     animation: spin 2s linear infinite;
 }
 
