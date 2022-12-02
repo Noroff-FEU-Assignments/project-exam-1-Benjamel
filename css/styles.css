@@ -4,6 +4,7 @@
 *::after,
 *::before {
     box-sizing: border-box;
+    /*I think next time i should include margin and padding = 0; here as well*/
 }
 
 p {
@@ -53,7 +54,7 @@ img {
 }
 
 .nav-child {
-    margin: 0 auto;
+    margin: var(--margin-auto);
     padding-top: 3px;
     width: 90%;
     max-width: 1200px;
@@ -174,7 +175,7 @@ img {
     font-size: var(--h1-size-desktop);
     font-family: var(--heading-font-family);
     font-weight: var(--font-weight);
-    text-align: left;
+    text-align: center;
 }
 
 .featured-text p {
@@ -362,7 +363,7 @@ h3,
     align-items: flex-start;
     max-width: 1200px;
     width: 90%;
-    margin: 0 auto;
+    margin: var(--margin-auto);
 }
 
 .blog-list-container {
@@ -473,20 +474,23 @@ h2 {
     display: none;
 }
 
-
 /* Blog-Post Specific */
+.blog-specific-container {
+    max-width: 1200px;
+    margin: var(--margin-auto);
+}
+
 .post-container {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: var(--margin-auto);
     margin-top: 20px;
     margin-bottom: 50px;
     box-shadow: var(--drop-shadow);
 }
 
 .back-btn {
-    margin-left: 10px;
     margin-top: 15px;
 }
 
@@ -581,11 +585,6 @@ h2 {
     display: none;
 }
 
-/* .nav-bar-modal {
-    width: 100%;
-    height: 100%;
-} */
-
 .modal-img img,
 .modal-container-gallery img {
     height: auto;
@@ -671,12 +670,12 @@ form textarea {
 
 button:disabled {
     cursor: auto;
+    background-color: #7b957a;
 }
 
 label {
     display: block;
     margin-top: 40px;
-
 }
 
 .error {
@@ -688,9 +687,11 @@ label {
 
 .message {
     font-size: var(--h3-size);
-    font-style: italic;
+    /* font-style: italic; */
     color: green;
     text-align: center;
+    border: 4px solid var(--darker-green);
+    padding: 10px;
 }
 
 /* Footer section */
@@ -745,6 +746,12 @@ label {
     }
 }
 
+@media (max-width: 1200px) {
+    .back-btn {
+        margin-left: 10px;
+    }
+}
+
 @media (max-width: 800px) {
     .about-content {
         flex-direction: column;
@@ -777,7 +784,7 @@ label {
 @media (max-width: 750px) {
     .featured-content {
         flex-direction: column;
-        margin: 0 auto 0 auto;
+        margin: var(--margin-auto);
     }
 
     .featured-content img {
@@ -796,7 +803,6 @@ label {
 
     .featured-text h1 {
         margin: 0;
-        text-align: center;
     }
 
 }
@@ -827,7 +833,7 @@ label {
     }
 
     .navbar-links ul {
-        margin: 0 auto;
+        margin: var(--margin-auto);
         flex-direction: column;
     }
 
@@ -878,7 +884,7 @@ label {
 
 @media (max-width: 450px) {
     .posts-container {
-        margin: 0 auto;
+        margin: var(--margin-auto);
         width: 98%;
         display: flex;
         flex-direction: column

@@ -1,3 +1,4 @@
+import { displayMessage } from "./displayMessage.js";
 
 const aboutContainer = document.querySelector(".about-content")
 const aboutUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts/133?_embed";
@@ -8,18 +9,19 @@ async function fetchData() {
     try {
         const response = await fetch(aboutUrl);
         const result = await response.json();
-        console.log(result)
+        // console.log(result)
         createHTML(result);
     }
     catch (error) {
         console.log(error, "An error ocurred");
-        aboutContainer.innerHTML = message("error", error)
+        displayMessage("error", error, ".errorMsg")
     }
 }
 
 fetchData();
 
 function createHTML(aboutContent) {
+    aboutContainer.innerHTML = ``;
     aboutContainer.innerHTML +=
         `
             <div class="about-image">

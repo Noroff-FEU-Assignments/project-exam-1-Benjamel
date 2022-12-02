@@ -67,12 +67,8 @@ function checkLength(value, len) {
     }
 }
 
-
 function validateEmail(email) {
     const regEx = /\S+@\S+\.\S+/;
     const emailPattern = regEx.test(email);
     return emailPattern;
 }
-
-const socialContainer = document.querySelector(".social-container")
-

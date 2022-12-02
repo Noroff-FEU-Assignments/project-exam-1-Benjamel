@@ -1,7 +1,6 @@
 import { displayMessage } from "./displayMessage.js";
 
 const modalContainerHeader = document.querySelector(".modal-container-header");
-const modalContainerGallery = document.querySelector(".modal-container-gallery");
 const backBtn = document.querySelector(".back-btn");
 
 const postDetails = document.querySelector(".post-details");
@@ -26,24 +25,8 @@ async function fetchPosts() {
         const result = await response.json();
 
         const blogPosts = result;
-        console.log(blogPosts);
         createHTML(blogPosts);
-
-        //Modal Image popup
-        const imageSrc = document.querySelectorAll("figure img");
-        console.log(imageSrc)
-
-        for (let i = 0; imageSrc.length; i++) {
-            imageSrc[i].onclick = function () {
-                modalGallery.style.display = "block";
-                imgGallery.src = imageSrc[i].currentSrc;
-            }
-            window.addEventListener("click", function (event) {
-                if (event.target == modalGallery) {
-                    modalGallery.style.display = "none";
-                };
-            });
-        }
+        ModalPopup();
     }
 
     catch (error) {
@@ -59,6 +42,8 @@ function createHTML(blogPosts) {
 
     backBtn.innerHTML =
         `<a href="/bloglist.html">&#8592; Back</a>`;
+
+    postDetails.innerHTML = ``;
 
     postDetails.innerHTML += `  <div class="post-container">
                                     <div class="post-header">
@@ -83,7 +68,7 @@ function createHTML(blogPosts) {
                                              <img src="${blogPosts._embedded["wp:featuredmedia"]["0"].source_url}" alt="${blogPosts.title.rendered}"></img>
                                         </div>`;
 
-    //Modal popup
+    //Modal popup - for my featured image
     const modalContainer = document.getElementById("modal-container-header");
     const modalImage = document.getElementsByClassName("modal-image")["0"];
 
@@ -97,3 +82,19 @@ function createHTML(blogPosts) {
         });
     };
 };
+
+//Modal Image popup - for my gallery images
+function ModalPopup() {
+    const imageSrc = document.querySelectorAll("figure img");
+    for (let i = 0; i < imageSrc.length; i++) {
+        imageSrc[i].onclick = function () {
+            modalGallery.style.display = "block";
+            imgGallery.src = imageSrc[i].currentSrc;
+        }
+        window.addEventListener("click", function (event) {
+            if (event.target == modalGallery) {
+                modalGallery.style.display = "none";
+            };
+        });
+    }
+}

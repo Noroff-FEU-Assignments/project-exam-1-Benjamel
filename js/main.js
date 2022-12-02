@@ -34,7 +34,7 @@ function navJs() {
     });
 }
 
-//attempt to make a background modal when my burger menu opened, and close it on scroll
+//attempt to make a background modal when my hamburger menu opened, and close it on scroll
 //dont quite work the way i want it to..
 function navModalJs() {
     let prevScrollPos = window.pageYOffset;
