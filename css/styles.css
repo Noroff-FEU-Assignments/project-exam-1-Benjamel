@@ -260,7 +260,7 @@ img {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(8, 100%);
+    grid-template-columns: repeat(4, 100%);
     grid-template-rows: 1fr;
 }
 
@@ -746,7 +746,7 @@ label {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1220px) {
     .back-btn {
         margin-left: 10px;
     }

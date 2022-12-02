@@ -25,7 +25,7 @@ function createHTML(aboutContent) {
     aboutContainer.innerHTML +=
         `
             <div class="about-image">
-                <img src="${aboutContent._embedded["wp:featuredmedia"]["0"].source_url}" alt="about image">
+                <img src="${aboutContent._embedded["wp:featuredmedia"]["0"].source_url}" alt="Picture of me, myself and I">
             </div>
             <div class="text-content">
                 <h1>${aboutContent.title.rendered}</h1>

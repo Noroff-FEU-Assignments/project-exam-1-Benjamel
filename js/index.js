@@ -1,7 +1,7 @@
 import { displayMessage } from "./displayMessage.js";
 
 //Slider
-const sliderUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts?per_page=20&_embed";
+const sliderUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts?per_page=10&_embed";
 const sliderTitle = document.querySelector(".slider-title");
 
 // Featured section
@@ -23,7 +23,7 @@ async function fetchData() {
 
     catch (error) {
         console.log(error, "An error ocurred");
-        displayMessage("error", error, ".errorMsg")
+        displayMessage("error", error, ".errorMsg");
     }
 }
 
@@ -54,9 +54,9 @@ function getSlider(getResults) {
 
 
 
-    for (let i = 2; i < getResults.length; i++) {
+    for (let i = 0; i < getResults.length; i++) {
 
-        if (i === 10) {
+        if (i === 4) {
             break
         }
 
