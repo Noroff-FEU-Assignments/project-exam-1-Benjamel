@@ -1,4 +1,4 @@
-import { displayMessage } from "./displayMessage.js";
+import { displayMessage } from "./ui/displayMessage.js";
 
 const aboutContainer = document.querySelector(".about-content")
 const aboutUrl = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts/133?_embed";

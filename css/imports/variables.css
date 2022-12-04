@@ -16,4 +16,5 @@
     --drop-shadow: 0 1px 5px #a5a4a4;
     --inner-shadow: 0 1px 0 #a5a4a4;
     --margin-auto: 0 auto;
+    --max-width: 1200px;
 }

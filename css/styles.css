@@ -57,7 +57,7 @@ img {
     margin: var(--margin-auto);
     padding-top: 3px;
     width: 90%;
-    max-width: 1200px;
+    max-width: var(--max-width);
     display: flex;
     justify-content: space-between;
 }
@@ -152,7 +152,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 30px auto 0 auto;
     background-color: var(--light-green);
 }
@@ -215,7 +215,7 @@ img {
     position: relative;
     overflow: hidden;
     width: 80%;
-    max-width: 1200px;
+    max-width: var(--max-width);
     max-height: 540px;
     scroll-behavior: smooth;
     box-shadow: var(--drop-shadow);
@@ -310,7 +310,7 @@ img {
 /* About Page */
 .about-content {
     display: flex;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 100px auto 0 auto;
     justify-content: center;
 }
@@ -361,7 +361,7 @@ h3,
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 4rem;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: var(--max-width);
     width: 90%;
     margin: var(--margin-auto);
 }
@@ -432,7 +432,7 @@ h2 {
     align-items: center;
     background-color: var(--light-green);
     padding: 10px 0;
-    max-width: 1200px;
+    max-width: var(--max-width);
     width: 90%;
     margin: 0 auto 20px auto;
 }
@@ -476,14 +476,14 @@ h2 {
 
 /* Blog-Post Specific */
 .blog-specific-container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: var(--margin-auto);
 }
 
 .post-container {
     display: flex;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: var(--margin-auto);
     margin-top: 20px;
     margin-bottom: 50px;
@@ -596,7 +596,7 @@ h2 {
     overflow: hidden;
     border: 1px solid white;
     width: 90%;
-    max-width: 1200px;
+    max-width: var(--max-width);
 }
 
 .modal-img p {

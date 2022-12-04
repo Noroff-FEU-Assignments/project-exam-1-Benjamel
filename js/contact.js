@@ -1,3 +1,5 @@
+// import { displayMessage } from "./ui/displayMessage.js";
+
 const form = document.querySelector("form");
 const fullName = document.querySelector("#fullName");
 const fullNameError = document.querySelector("#fullNameError");

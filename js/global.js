@@ -1,4 +1,3 @@
-
 // Hamburger Menu
 const toggleMenu = document.getElementsByClassName("toggle-menu")[0];
 const navbarLinks = document.getElementsByClassName("navbar-links")[0];
@@ -12,6 +11,7 @@ async function mainJs() {
     }
     catch (error) {
         console.log(error, "An error ocurred");
+
     }
 }
 
@@ -50,9 +50,8 @@ function navModalJs() {
     }
 }
 
-// Footer
+// Footer 
 const footerContainer = document.querySelector(".footer-container")
-
 footerContainer.innerHTML = `
                             <div class="footer-nav">
                                 <div class="social-media-icons">
@@ -73,3 +72,28 @@ footerContainer.innerHTML = `
                                 <div class="footer-copyright">
                                     <p>©Copyright Benjamin Meldal</p>
                                 </div>`;
+
+
+
+
+// const footerContainer = document.querySelector("footer");
+
+// const footerNav = document.createElement("div");
+// footerContainer.append(footerNav);
+// footerNav.classList.add("footer-nav");
+
+// const socialIcons = document.createElement("div");
+// footerNav.append(socialIcons);
+// socialIcons.classList.add("social-media-icons");
+// //Github icon
+// const anchorTag = document.createElement("a");
+// socialIcons.append(anchorTag);
+// anchorTag.href = "https://www.github.com/Benjamel";
+// const iconImg = document.createElement("img");
+// anchorTag.append(iconImg);
+// iconImg.src = "/icons/icons8-github-50.png";
+//Linkedin icon
+// socialIcons.append(anchorTag);
+// anchorTag.href = "https://www.linkedin.com/in/benjaminmeldal/";
+// anchorTag.append(iconImg);
+// iconImg.src = "/icons/icons8-linkedin-circled-48.png";

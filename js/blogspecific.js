@@ -1,4 +1,5 @@
-import { displayMessage } from "./displayMessage.js";
+import { displayMessage } from "./ui/displayMessage.js";
+import { modalPopup } from "./ui/modalPopup.js";
 
 const modalContainerHeader = document.querySelector(".modal-container-header");
 const backBtn = document.querySelector(".back-btn");
@@ -16,9 +17,6 @@ if (!id) {
 
 const url = "https://www.benjaminmeldal.com/wp-json/wp/v2/posts/" + id + "?_embed";
 
-const modalGallery = document.getElementById("modal-container-gallery");
-const imgGallery = document.getElementById("imgpopup");
-
 async function fetchPosts() {
     try {
         const response = await fetch(url);
@@ -26,12 +24,12 @@ async function fetchPosts() {
 
         const blogPosts = result;
         createHTML(blogPosts);
-        ModalPopup();
+        modalPopup();
     }
 
     catch (error) {
-        console.log(error, "An error ocurred")
-        displayMessage("error", error, ".errorMsg")
+        console.log(error, "An error ocurred");
+        displayMessage("error", error, ".errorMsg");
     }
 }
 
@@ -65,8 +63,8 @@ function createHTML(blogPosts) {
 
 
     modalContainerHeader.innerHTML = `<div class="modal-img">
-                                             <img src="${blogPosts._embedded["wp:featuredmedia"]["0"].source_url}" alt="${blogPosts.title.rendered}"></img>
-                                        </div>`;
+                                <img src="${blogPosts._embedded["wp:featuredmedia"]["0"].source_url}" alt="${blogPosts.title.rendered}"></img>
+                            </div>`;
 
     //Modal popup - for my featured image
     const modalContainer = document.getElementById("modal-container-header");
@@ -82,19 +80,3 @@ function createHTML(blogPosts) {
         });
     };
 };
-
-//Modal Image popup - for my gallery images
-function ModalPopup() {
-    const imageSrc = document.querySelectorAll("figure img");
-    for (let i = 0; i < imageSrc.length; i++) {
-        imageSrc[i].onclick = function () {
-            modalGallery.style.display = "block";
-            imgGallery.src = imageSrc[i].currentSrc;
-        }
-        window.addEventListener("click", function (event) {
-            if (event.target == modalGallery) {
-                modalGallery.style.display = "none";
-            };
-        });
-    }
-}
